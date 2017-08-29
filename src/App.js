@@ -25,7 +25,9 @@ class App extends Component {
       <BrowserRouter>
         <MuiThemeProvider muiTheme={getMuiTheme(fusTheme)}>
           <div>
+            <div  style={{marginTop: 6 }}>
             <TopNav />
+            </div>
 
             <Switch>
               <Route exact path='/' component={Home} />
