@@ -3,8 +3,10 @@ import './styles/App.css';
 import './styles/materialize-grid.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-
+/* Material-UI */
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import getMuiTheme from 'material-ui/styles/getMuiTheme'
+import fusTheme from './components/fusTheme'
 
 import TopNav from './components/TopNav.js';
 
@@ -21,7 +23,7 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <MuiThemeProvider>
+        <MuiThemeProvider muiTheme={getMuiTheme(fusTheme)}>
           <div>
             <TopNav />
 
