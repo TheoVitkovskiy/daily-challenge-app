@@ -1,25 +1,28 @@
 import React, { Component } from 'react';
 import RaisedButton from 'material-ui/RaisedButton'
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import Paper from 'material-ui/Paper'
 
 class NavBarItem extends Component {
   render(){
     return(
-      <Link
-        activeClassItem="active"
-        exact={this.props.isExact}
-        to={this.props.linkTo}
-      >
-        <RaisedButton
-          label={this.props.label}
-          primary={true}
-          fullWidth
-          style={{height: '50%'}}
-          labelStyle={{ fontSize: 30, padding: 1, textTransform: 'none'}}
-          buttonStyle={{height: 100, lineHeight: 1.45}}
-          overlayStyle={{height: 100,   display: 'flex', justifyContent: 'center', flexDirection: 'column' }}
-        />
-      </Link>
+      <Paper zDepth={1}>
+        <NavLink
+          activeClassItem="active"
+          exact={this.props.isExact}
+          to={this.props.linkTo}
+        >
+          <RaisedButton
+            label={this.props.label}
+            primary={true}
+            fullWidth
+            style={{height: '50%'}}
+            labelStyle={{ fontSize: 30, padding: 1, textTransform: 'none', fontWeight: 30, letterSpacing: 1}}
+            buttonStyle={{height: 100, lineHeight: 1.45}}
+            overlayStyle={{height: 100,   display: 'flex', justifyContent: 'center', flexDirection: 'column' }}
+          />
+        </NavLink>
+      </Paper>
     )
   }
 }
