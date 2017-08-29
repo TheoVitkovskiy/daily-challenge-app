@@ -41,9 +41,11 @@ class Home extends Component {
         >
         {items}
         </SelectField>
-        <FloatingActionButton style={{marginLeft: '45%',}}>
-          <ContentAdd />
-        </FloatingActionButton>
+        <div style={{display: 'flex', justifyContent: 'center', flexDirection: 'row'}}>
+          <FloatingActionButton>
+            <ContentAdd />
+          </FloatingActionButton>
+        </div>
       </div>
     )
   }
