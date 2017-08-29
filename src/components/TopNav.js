@@ -1,45 +1,36 @@
 import React, { Component } from 'react';
 import { Card, CardText } from 'material-ui/Card';
+import RaisedButton from 'material-ui/RaisedButton'
 import { Link } from 'react-router-dom';
 
 
-
-class TopNav extends Component {
+class TopNavTest extends Component {
   render() {
     return (
       <div>
         <div className="row">
           <div className="col s4 m4">
             <Link
-              to='/Home'
+              to='/'
             >
-              <Card>
-                <CardText style={{textAlign: 'center'}}>
-                  DAILY CHALLENGE
-                </CardText>
-              </Card>
+            <RaisedButton label="Daily Challenge" primary={true} fullWidth style={{height: '50%'}} labelStyle={{ fontSize: 30, padding: 1, textTransform: 'none'}} buttonStyle={{height: 100, lineHeight: 1.45}} overlayStyle={{height: 100,   display: 'flex', justifyContent: 'center', flexDirection: 'column' }}
+            />
             </Link>
           </div>
           <div className="col s4 m4">
             <Link
-              to='/Home'
+              to='/challenges'
             >
-              <Card>
-                <CardText style={{textAlign: 'center'}}>
-                  CHALLENGE OVERVIEW
-                </CardText>
-              </Card>
+            <RaisedButton label="Challenge Overview" primary={true} fullWidth style={{height: '50%'}} labelStyle={{ fontSize: 30, padding: 1, textTransform: 'none'}} buttonStyle={{height: 100, lineHeight: 1.45}} overlayStyle={{height: 100,   display: 'flex', justifyContent: 'center', flexDirection: 'column' }}
+            />
             </Link>
           </div>
           <div className="col s4 m4">
             <Link
-              to='/Home'
+              to='/progress'
             >
-              <Card>
-                <CardText style={{textAlign: 'center'}}>
-                  CHALLENGE PROGRESS
-                </CardText>
-              </Card>
+              <RaisedButton label="Challenge Progress" primary={true} fullWidth style={{height: '50%'}} labelStyle={{ fontSize: 30, padding: 1, textTransform: 'none'}} buttonStyle={{height: 100, lineHeight: 1.45}} overlayStyle={{height: 100,   display: 'flex', justifyContent: 'center', flexDirection: 'column' }}
+              />
             </Link>
           </div>
         </div>
@@ -48,4 +39,4 @@ class TopNav extends Component {
   }
 }
 
-export default TopNav
+export default TopNavTest

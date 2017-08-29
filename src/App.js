@@ -10,6 +10,8 @@ import TopNav from './components/TopNav.js';
 
 /* Import Views */
 import Home from './views/Home.js'
+import Challenges from './views/Challenges.js'
+import Progress from './views/Progress.js'
 
 
 
@@ -25,6 +27,8 @@ class App extends Component {
 
             <Switch>
               <Route exact path='/' component={Home} />
+              <Route path='/challenges' component={Challenges} />
+              <Route path='/progress' component={Progress} />
             </Switch>
           </div>
         </MuiThemeProvider>
