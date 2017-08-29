@@ -7,9 +7,12 @@ class Challenges extends Component {
       <div className="container">
         <Card style={{marginBottom: '2em', display: 'flex', justifyContent: 'center', flexDirection: 'row'}}>
           <CardTitle
+            actAsExpander={true}
+            showExpandableButton={true}
+            titleStyle={{marginRight: '1.5em'}}
             title="Walk up the mountain with skis on!"
           />
-          <CardMedia mediaStyle={{width: 500, height: 400}}>
+          <CardMedia mediaStyle={{width: 500, height: 400}} expandable={true}>
             <img src="https://placeimg.com/750/600/nature" alt="" />
           </CardMedia>
           <CardText>
@@ -18,9 +21,12 @@ class Challenges extends Component {
         </Card>
         <Card style={{marginBottom: '2em', display: 'flex', justifyContent: 'center', flexDirection: 'row'}}>
           <CardTitle
-            title="Don't walk without your shoes on, ever!"
+            actAsExpander={true}
+            showExpandableButton={true}
+            titleStyle={{marginRight: '1.5em'}}
+            title="Don't walk without your shoes on, ever"
           />
-          <CardMedia mediaStyle={{width: 500, height: 400}}>
+          <CardMedia mediaStyle={{width: 500, height: 400}} expandable={true}>
             <img src="https://placeimg.com/750/600/arch" alt="" />
           </CardMedia>
           <CardText>
@@ -29,9 +35,12 @@ class Challenges extends Component {
         </Card>
         <Card style={{marginBottom: '2em', display: 'flex', justifyContent: 'center', flexDirection: 'row'}}>
           <CardTitle
+            actAsExpander={true}
+            showExpandableButton={true}
+            titleStyle={{marginRight: '1.5em'}}
             title="Don't chew on your T-Shirt whole day long!"
           />
-          <CardMedia mediaStyle={{width: 500, height: 400}}>
+          <CardMedia mediaStyle={{width: 500, height: 400}} expandable={true}>
             <img src="https://placeimg.com/750/600/tech" alt="" />
           </CardMedia>
           <CardText>
@@ -40,9 +49,12 @@ class Challenges extends Component {
         </Card>
         <Card style={{marginBottom: '2em', display: 'flex', justifyContent: 'center', flexDirection: 'row'}}>
           <CardTitle
+            actAsExpander={true}
+            showExpandableButton={true}
+            titleStyle={{marginRight: '1.5em'}}
             title="Don't walk without your shoes on, ever!"
           />
-          <CardMedia mediaStyle={{width: 500, height: 400}}>
+          <CardMedia mediaStyle={{width: 500, height: 400}} expandable={true}>
             <img src="https://placeimg.com/750/600/people" alt="" />
           </CardMedia>
           <CardText>
@@ -51,9 +63,12 @@ class Challenges extends Component {
         </Card>
         <Card style={{marginBottom: '2em', display: 'flex', justifyContent: 'center', flexDirection: 'row'}}>
           <CardTitle
+            actAsExpander={true}
+            showExpandableButton={true}
+            titleStyle={{marginRight: '1.5em'}}
             title="Don't chew on your T-Shirt whole day long!"
           />
-          <CardMedia mediaStyle={{width: 500, height: 400}}>
+          <CardMedia mediaStyle={{width: 500, height: 400}} expandable={true}>
             <img src="https://placeimg.com/750/600/animals" alt="" />
           </CardMedia>
           <CardText>
@@ -62,9 +77,12 @@ class Challenges extends Component {
         </Card>
         <Card style={{marginBottom: '2em', display: 'flex', justifyContent: 'center', flexDirection: 'row'}}>
           <CardTitle
+            actAsExpander={true}
+            showExpandableButton={true}
+            titleStyle={{marginRight: '1.5em'}}
             title="Walk up the mountain with skis on!"
           />
-          <CardMedia mediaStyle={{width: 500, height: 400}}>
+          <CardMedia mediaStyle={{width: 500, height: 400}} expandable={true}>
             <img src="https://placeimg.com/750/600/arch" alt="" />
           </CardMedia>
           <CardText>
