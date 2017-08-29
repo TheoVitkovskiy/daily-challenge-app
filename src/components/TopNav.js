@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardText } from 'material-ui/Card';
-import RaisedButton from 'material-ui/RaisedButton'
-import { Link } from 'react-router-dom';
+import NavBarItem from './NavBarItem'
 
 
 class TopNavTest extends Component {
@@ -10,28 +8,28 @@ class TopNavTest extends Component {
       <div>
         <div className="row">
           <div className="col s4 m4">
-            <Link
-              to='/'
+            <NavBarItem
+              isExact={true}
+              linkTo={'/'}
+              label="Daily"
             >
-            <RaisedButton label="Daily Challenge" primary={true} fullWidth style={{height: '50%'}} labelStyle={{ fontSize: 30, padding: 1, textTransform: 'none'}} buttonStyle={{height: 100, lineHeight: 1.45}} overlayStyle={{height: 100,   display: 'flex', justifyContent: 'center', flexDirection: 'column' }}
-            />
-            </Link>
+            </NavBarItem>
           </div>
           <div className="col s4 m4">
-            <Link
-              to='/challenges'
+            <NavBarItem
+              isExact={false}
+              linkTo={'/challenges'}
+              label="Overview"
             >
-            <RaisedButton label="Challenge Overview" primary={true} fullWidth style={{height: '50%'}} labelStyle={{ fontSize: 30, padding: 1, textTransform: 'none'}} buttonStyle={{height: 100, lineHeight: 1.45}} overlayStyle={{height: 100,   display: 'flex', justifyContent: 'center', flexDirection: 'column' }}
-            />
-            </Link>
+            </NavBarItem>
           </div>
           <div className="col s4 m4">
-            <Link
-              to='/progress'
+            <NavBarItem
+              isExact={false}
+              linkTo={'/progress'}
+              label="Progress"
             >
-              <RaisedButton label="Challenge Progress" primary={true} fullWidth style={{height: '50%'}} labelStyle={{ fontSize: 30, padding: 1, textTransform: 'none'}} buttonStyle={{height: 100, lineHeight: 1.45}} overlayStyle={{height: 100,   display: 'flex', justifyContent: 'center', flexDirection: 'column' }}
-              />
-            </Link>
+            </NavBarItem>
           </div>
         </div>
       </div>
