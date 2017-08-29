@@ -9,6 +9,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import fusTheme from './components/fusTheme'
 
 import TopNav from './components/TopNav.js';
+import AppBar from 'material-ui/AppBar';
 
 /* Import Views */
 import Home from './views/Home.js'
@@ -25,10 +26,11 @@ class App extends Component {
       <BrowserRouter>
         <MuiThemeProvider muiTheme={getMuiTheme(fusTheme)}>
           <div>
-            <div  style={{marginTop: 6 }}>
-            <TopNav />
-            </div>
-
+            <AppBar
+              titleStyle={{flex: 'none'}}
+              style={{backgroundColor: '#424242'}}>
+              <TopNav />
+            </AppBar>
             <Switch>
               <Route exact path='/' component={Home} />
               <Route path='/challenges' component={Challenges} />

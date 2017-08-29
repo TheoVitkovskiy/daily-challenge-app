@@ -1,5 +1,5 @@
 export default {
   palette: {
-    primary1Color: '#CC3333',
+    primary1Color: '#B71C1C',
   }
 }

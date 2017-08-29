@@ -5,8 +5,8 @@ import NavBarItem from './NavBarItem'
 class TopNavTest extends Component {
   render() {
     return (
-      <div>
-        <div className="row">
+      <div className="container" style={{marginTop: 20}}>
+        <div className="row" >
           <div className="col s4 m4">
             <NavBarItem
               isExact={true}
