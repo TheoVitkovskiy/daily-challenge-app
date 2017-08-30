@@ -17,6 +17,7 @@ import SideNav from './components/SideNav.js';
 import Home from './views/Home.js'
 import Challenges from './views/Challenges.js'
 import Progress from './views/Progress.js'
+import HomeAlt from './views/HomeAlt.js'
 
 import MediaQuery from 'react-responsive'
 
@@ -63,6 +64,7 @@ class App extends Component {
 
             <Switch>
               <Route exact path='/' component={Home} />
+              <Route exact path='/home' component={HomeAlt} />
               <Route path='/challenges' component={Challenges} />
               <Route path='/progress' component={Progress} />
             </Switch>

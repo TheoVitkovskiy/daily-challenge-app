@@ -6,6 +6,8 @@ import FloatingActionButton from 'material-ui/FloatingActionButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 
+import { NavLink } from 'react-router-dom';
+
 
 const items = [
   <MenuItem key={1} value={1} primaryText="Very Difficult" style={{color: 'red'}} />,
@@ -51,9 +53,14 @@ class Home extends Component {
           </RaisedButton>
         </div>
         <div style={{display: 'flex', justifyContent: 'center', flexDirection: 'row'}}>
+        <NavLink
+          exact={false}
+          to={'/home'}
+        >
           <FloatingActionButton>
             <ContentAdd />
           </FloatingActionButton>
+        </NavLink>
         </div>
       </div>
     )
