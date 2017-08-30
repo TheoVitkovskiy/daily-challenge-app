@@ -4,7 +4,7 @@ import { ApAnalogClock, ApAnalogClockStyle } from 'apeman-react-clock'
 import Countdown from 'react-countdown-now'
 
 const renderer = ({ hours, minutes, seconds }) => {
-  return <span style={{fontSize: '100px'}}>{hours}:{minutes}:{seconds}</span>
+  return <span style={{fontSize: '100px', color: 'red'}}>{hours}:{minutes}:{seconds}</span>
 }
 
 class HomeAlt extends Component {
