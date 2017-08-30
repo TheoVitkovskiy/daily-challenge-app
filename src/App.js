@@ -8,7 +8,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import fusTheme from './components/fusTheme'
 
-import TopNavTest from './components/TopNavTest.js';
+import TopNav from './components/TopNav.js';
 import AppBar from 'material-ui/AppBar';
 import SideNav from './components/SideNav.js';
 
@@ -42,21 +42,21 @@ class App extends Component {
             <MediaQuery query='(min-width: 725px)'>
               <AppBar
                 titleStyle={{flex: 'none'}}
-                style={{backgroundColor: '#FFF', height: 80}}
+                style={{backgroundColor: '#424242', height: 80}}
                 onLeftIconButtonTouchTap={this.handleToggle}
                 showMenuIconButton={true}>
-                <TopNavTest />
+                <TopNav />
               </AppBar>
             </MediaQuery>
 
             <MediaQuery query='(max-width: 725px)'>
               <AppBar
                 titleStyle={{flex: 'none'}}
-                style={{backgroundColor: '#FFF', height: 80}}
+                style={{backgroundColor: '#424242', height: 80}}
                 onLeftIconButtonTouchTap={this.handleToggle}
                 showMenuIconButton={false}
               >
-                <TopNavTest />
+                <TopNav />
               </AppBar>
             </MediaQuery>
             <SideNav open={this.state.open} onRequestChange={open => this.setState({ open })}  />
