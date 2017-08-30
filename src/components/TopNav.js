@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import NavBarItem from './NavBarItem'
 
 
-class TopNavTest extends Component {
+class TopNav extends Component {
   render() {
     return (
       <div className="container resp" style={{position: 'absolute', left: 0, right: 0, top: 0, bottom: 0}} >
@@ -37,4 +37,4 @@ class TopNavTest extends Component {
   }
 }
 
-export default TopNavTest
+export default TopNav

@@ -53,7 +53,7 @@ class Progress extends Component {
       <div style={{display: 'flex', justifyContent: 'center', flexDirection: 'column'}}>
         <div style={{display: 'flex', justifyContent: 'center', flexDirection: 'row', marginTop: '2em'}}>
           <FullCalendar
-            style = {{ margin: 10, fontSize: 15, height: 380, width: 500 }}
+            style = {{ margin: 10, fontSize: 15, height: 380, width: 500, backgroundColor: '#eee' }}
             Select = { Select }
             fullscreen = { false }
             onSelect = { onSelect }

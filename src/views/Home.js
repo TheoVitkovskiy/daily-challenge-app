@@ -28,8 +28,8 @@ class Home extends Component {
     return(
       <div className="container">
         <TextField
-          floatingLabelText="Enter your challenge for the day!"
-          floatingLabelStyle={{fontSize: 24}}
+          hintText="Enter your challenge for the day!"
+          hintStyle={{fontSize: 24}}
           inputStyle={{fontSize: 24}}
           fullWidth
         />
@@ -37,7 +37,7 @@ class Home extends Component {
           value={this.state.value}
           onChange={this.handleChange}
           hintText="How difficult would you rate this challenge?"
-          menuItemStyle={{fontSize: 26}}
+          menuItemStyle={{fontSize: 24}}
           labelStyle={{fontSize: 24}}
           hintStyle={{fontSize: 24}}
           fullWidth
