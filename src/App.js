@@ -16,21 +16,42 @@ import Home from './views/Home.js'
 import Challenges from './views/Challenges.js'
 import Progress from './views/Progress.js'
 
+import MediaQuery from 'react-responsive'
 
 
 
 
 class App extends Component {
+
+  state = {
+    showMenuButton: true
+  }
+
+
   render() {
     return (
       <BrowserRouter>
         <MuiThemeProvider muiTheme={getMuiTheme(fusTheme)}>
           <div>
-            <AppBar
-              titleStyle={{flex: 'none'}}
-              style={{backgroundColor: '#424242'}}>
-              <TopNav />
-            </AppBar>
+
+            <MediaQuery query='(min-width: 725px)'>
+              <AppBar
+                titleStyle={{flex: 'none'}}
+                style={{backgroundColor: '#424242', height: 80}}
+                showMenuIconButton={true}>
+                <TopNav />
+              </AppBar>
+            </MediaQuery>
+
+            <MediaQuery query='(max-width: 725px)'>
+              <AppBar
+                titleStyle={{flex: 'none'}}
+                style={{backgroundColor: '#424242', height: 80}}
+                showMenuIconButton={false}>
+                <TopNav />
+              </AppBar>
+            </MediaQuery>
+
             <Switch>
               <Route exact path='/' component={Home} />
               <Route path='/challenges' component={Challenges} />

@@ -5,7 +5,7 @@ import NavBarItem from './NavBarItem'
 class TopNavTest extends Component {
   render() {
     return (
-      <div className="container" style={{marginTop: 20}}>
+      <div className="container resp" style={{position: 'absolute', left: 0, right: 0, top: 0, bottom: 0}} >
         <div className="row" >
           <div className="col s4 m4">
             <NavBarItem
