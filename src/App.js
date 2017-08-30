@@ -10,6 +10,8 @@ import fusTheme from './components/fusTheme'
 
 import TopNav from './components/TopNav.js';
 import AppBar from 'material-ui/AppBar';
+import SideNav from './components/SideNav.js';
+
 
 /* Import Views */
 import Home from './views/Home.js'
@@ -24,9 +26,11 @@ import MediaQuery from 'react-responsive'
 class App extends Component {
 
   state = {
-    showMenuButton: true
+    showMenuButton: true,
+    open: false
   }
 
+  handleToggle = () => this.setState({open: !this.state.open});
 
   render() {
     return (
@@ -38,6 +42,7 @@ class App extends Component {
               <AppBar
                 titleStyle={{flex: 'none'}}
                 style={{backgroundColor: '#424242', height: 80}}
+                onLeftIconButtonTouchTap={this.handleToggle}
                 showMenuIconButton={true}>
                 <TopNav />
               </AppBar>
@@ -47,10 +52,14 @@ class App extends Component {
               <AppBar
                 titleStyle={{flex: 'none'}}
                 style={{backgroundColor: '#424242', height: 80}}
-                showMenuIconButton={false}>
+                onLeftIconButtonTouchTap={this.handleToggle}
+                showMenuIconButton={false}
+              >
                 <TopNav />
               </AppBar>
             </MediaQuery>
+            <SideNav open={this.state.open} onRequestChange={open => this.setState({ open })}  />
+
 
             <Switch>
               <Route exact path='/' component={Home} />
