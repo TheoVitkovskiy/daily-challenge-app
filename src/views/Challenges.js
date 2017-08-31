@@ -4,7 +4,7 @@ import { Card, CardTitle, CardText, CardMedia } from 'material-ui/Card';
 class Challenges extends Component {
   render(){
     return(
-      <div className="container">
+      <div className="container" style={{marginTop: '5em'}}>
         <Card style={{marginBottom: '2em', marginTop: '2em'}}>
           <CardTitle
             actAsExpander={true}

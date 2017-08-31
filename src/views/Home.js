@@ -18,17 +18,39 @@ const items = [
 
 class Home extends Component {
 
-  state = {
-    value: null,
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      value: null,
+      challenge: ''
+    }
+
+    this.handleInputChange = this.handleInputChange.bind(this);
   }
 
   handleChange = (event, index, value) => this.setState({value})
 
+  handleInputChange(event) {
+    const target = event.target;
+    const value = event.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+
+    this.setState({
+      [name] : value
+    });
+  }
+
+  handle
+
   render(){
     return(
-      <div className="container">
+      <div className="container" style={{marginTop: '5em'}}>
         <TextField
+          onChange={this.handleInputChange}
+          value={this.state.challenge}
           hintText="Enter your challenge for the day!"
+          name="challenge"
           hintStyle={{fontSize: 24}}
           inputStyle={{fontSize: 24}}
           fullWidth
@@ -37,12 +59,13 @@ class Home extends Component {
           value={this.state.value}
           onChange={this.handleChange}
           hintText="How difficult would you rate this challenge?"
+          name="difficulty"
           menuItemStyle={{fontSize: 24}}
           labelStyle={{fontSize: 24}}
           hintStyle={{fontSize: 24}}
           fullWidth
         >
-        {items}
+          {items}
         </SelectField>
         <div style={{display: 'flex', justifyContent: 'center', flexDirection: 'row', margin: '2em 0'}}>
           <RaisedButton

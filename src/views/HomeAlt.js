@@ -20,7 +20,7 @@ class HomeAlt extends Component {
     var month = currentDate.toLocaleString("en-us", { month: "short" })
 
     return (
-      <div>
+      <div style={{marginTop: '5em'}}>
         <div style={{display: 'flex', justifyContent: 'center', flexDirection: 'row', marginTop: '2em'}}>
 
           <p style={{fontSize: 35, textAlign: 'center'}}> Behalte Blickkontakt den ganzen Tag lang </p>

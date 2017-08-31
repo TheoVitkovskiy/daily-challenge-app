@@ -50,7 +50,7 @@ class Progress extends Component {
   render() {
 
     return(
-      <div style={{display: 'flex', justifyContent: 'center', flexDirection: 'column'}}>
+      <div style={{display: 'flex', justifyContent: 'center', flexDirection: 'column', marginTop: '3em'}}>
         <div style={{display: 'flex', justifyContent: 'center', flexDirection: 'row', marginTop: '2em'}}>
           <FullCalendar
             style = {{ margin: 10, fontSize: 15, height: 380, width: 500, backgroundColor: '#eee' }}
