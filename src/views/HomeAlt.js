@@ -3,6 +3,9 @@ import Clock from 'react-live-clock'
 import { ApAnalogClock, ApAnalogClockStyle } from 'apeman-react-clock'
 import Countdown from 'react-countdown-now'
 
+/* Redux */
+import {connect} from 'react-redux'
+
 const renderer = ({ hours, minutes, seconds }) => {
   return <span style={{fontSize: '100px', color: 'red'}}>{hours}:{minutes}:{seconds}</span>
 }
@@ -23,7 +26,7 @@ class HomeAlt extends Component {
       <div style={{marginTop: '5em'}}>
         <div style={{display: 'flex', justifyContent: 'center', flexDirection: 'row', marginTop: '2em'}}>
 
-          <p style={{fontSize: 35, textAlign: 'center'}}> Behalte Blickkontakt den ganzen Tag lang </p>
+          <p style={{fontSize: 35, textAlign: 'center'}}> {this.props.challenges.map((chal) => { if (chal.id === 1) return chal.challenge })} </p>
 
         </div>
         <div style={{display: 'flex', justifyContent: 'center', flexDirection: 'row', marginTop: '1em'}}>
@@ -44,4 +47,10 @@ class HomeAlt extends Component {
   }
 }
 
-export default HomeAlt
+function mapStateToProps(state) {
+  return {
+    challenges: state.challenges
+  }
+}
+
+export default connect(mapStateToProps)(HomeAlt)
