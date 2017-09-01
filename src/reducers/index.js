@@ -1,8 +1,9 @@
 import {combineReducers} from 'redux';
-import UserReducer from './reducer-challenges';
+import ChallengeReducer from './reducer-challenges';
+
 
 const allReducers = combineReducers({
-  challenges: UserReducer
+  challenges: ChallengeReducer
 });
 
 export default allReducers;

@@ -14,12 +14,13 @@ class NavBarItem extends Component {
         >
           <RaisedButton
             label={this.props.label}
-            primary={true}
+            primary={this.props.isPrimary}
+            secondary={this.props.isSecondary}
             fullWidth
             style={{height: '50%'}}
             labelStyle={{ fontSize: 30, padding: 1, textTransform: 'none', fontWeight: 30, letterSpacing: 1}}
-            buttonStyle={{height: 70, lineHeight: 1.45}}
-            overlayStyle={{height: 70,   display: 'flex', justifyContent: 'center', flexDirection: 'column' }}
+            buttonStyle={{height: 75, lineHeight: 1.45}}
+            overlayStyle={{height: 75,   display: 'flex', justifyContent: 'center', flexDirection: 'column' }}
           />
         </NavLink>
       </Paper>

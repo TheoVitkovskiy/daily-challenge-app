@@ -22,9 +22,6 @@ import HomeAlt from './views/HomeAlt.js'
 import MediaQuery from 'react-responsive'
 
 
-// import ChallengeList from './containers/challenge-list'
-
-
 
 class App extends Component {
 
@@ -50,7 +47,7 @@ class App extends Component {
                 <TopNav />
               </AppBar>
             </MediaQuery>
-            
+
             <MediaQuery query='(max-width: 725px)'>
               <AppBar
                 titleStyle={{flex: 'none'}}
@@ -62,7 +59,6 @@ class App extends Component {
               </AppBar>
             </MediaQuery>
             <SideNav open={this.state.open} onRequestChange={open => this.setState({ open })}  />
-
 
             <Switch>
               <Route exact path='/' component={Home} />

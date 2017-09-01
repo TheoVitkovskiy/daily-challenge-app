@@ -10,6 +10,7 @@ class TopNav extends Component {
           <div className="col s4 m4">
             <NavBarItem
               isExact={true}
+              isPrimary={true}
               linkTo={'/'}
               label="Daily"
             >
@@ -18,6 +19,7 @@ class TopNav extends Component {
           <div className="col s4 m4">
             <NavBarItem
               isExact={false}
+              isPrimary={true}
               linkTo={'/challenges'}
               label="Overview"
             >
@@ -26,6 +28,7 @@ class TopNav extends Component {
           <div className="col s4 m4">
             <NavBarItem
               isExact={false}
+              isPrimary={true}
               linkTo={'/progress'}
               label="Progress"
             >

@@ -6,15 +6,23 @@ import FloatingActionButton from 'material-ui/FloatingActionButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 
+
 import { NavLink } from 'react-router-dom';
+
+/* Redux */
+import {connect} from 'react-redux'
+import {bindActionCreators} from 'redux'
+import {addChallenge} from '../actions/index';
 
 
 const items = [
-  <MenuItem key={1} value={1} primaryText="Very Difficult" style={{color: 'red'}} />,
-  <MenuItem key={2} value={2} primaryText="Difficult" style={{color: 'orange'}} />,
-  <MenuItem key={3} value={3} primaryText="Normal" style={{color: 'grey'}}/>,
-  <MenuItem key={4} value={4} primaryText="Easy" style={{color: 'green'}}/>,
+  <MenuItem key={1} value={1} primaryText="Easy" style={{color: 'green'}} />,
+  <MenuItem key={2} value={2} primaryText="Normal" style={{color: 'grey'}} />,
+  <MenuItem key={3} value={3} primaryText="Difficult" style={{color: 'orange'}}/>,
+  <MenuItem key={4} value={4} primaryText="Very Difficult" style={{color: 'red'}}/>,
 ];
+
+let nextChalId = 0;
 
 class Home extends Component {
 
@@ -22,16 +30,16 @@ class Home extends Component {
     super(props);
 
     this.state = {
-      value: null,
+      difficulty: null,
       challenge: ''
     }
 
     this.handleInputChange = this.handleInputChange.bind(this);
   }
 
-  handleChange = (event, index, value) => this.setState({value})
 
   handleInputChange(event) {
+    console.log(this.props.challenges)
     const target = event.target;
     const value = event.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
@@ -41,7 +49,9 @@ class Home extends Component {
     });
   }
 
-  handle
+  handleChange = (event, index, value) => this.setState({difficulty: value})
+
+
 
   render(){
     return(
@@ -56,8 +66,8 @@ class Home extends Component {
           fullWidth
         />
         <SelectField
-          value={this.state.value}
           onChange={this.handleChange}
+          value={this.state.difficulty}
           hintText="How difficult would you rate this challenge?"
           name="difficulty"
           menuItemStyle={{fontSize: 24}}
@@ -80,7 +90,11 @@ class Home extends Component {
           exact={false}
           to={'/home'}
         >
-          <FloatingActionButton>
+          <FloatingActionButton onClick={() => this.props.addChallenge({
+            id: nextChalId++,
+            challenge: this.state.challenge,
+            difficulty: this.state.difficulty
+          })}>
             <ContentAdd />
           </FloatingActionButton>
         </NavLink>
@@ -90,4 +104,14 @@ class Home extends Component {
   }
 }
 
-export default Home
+function mapStateToProps(state) {
+  return {
+    challenges: state.challenges
+  }
+}
+
+function matchDispatchToProps(dispatch){
+   return bindActionCreators({addChallenge: addChallenge}, dispatch)
+}
+
+export default connect(mapStateToProps, matchDispatchToProps)(Home)
