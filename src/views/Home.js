@@ -31,7 +31,7 @@ class Home extends Component {
 
     this.state = {
       difficulty: null,
-      challenge: ''
+      title: ''
     }
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -58,9 +58,9 @@ class Home extends Component {
       <div className="container" style={{marginTop: '5em'}}>
         <TextField
           onChange={this.handleInputChange}
-          value={this.state.challenge}
+          value={this.state.title}
           hintText="Enter your challenge for the day!"
-          name="challenge"
+          name="title"
           hintStyle={{fontSize: 24}}
           inputStyle={{fontSize: 24}}
           fullWidth
@@ -85,6 +85,7 @@ class Home extends Component {
             <input type="file" style={{cursor: 'pointer', position: 'absolute', top: 0, bottom: 0, right: 0, left: 0, width: '100%', opacity: 0}} />
           </RaisedButton>
         </div>
+
         <div style={{display: 'flex', justifyContent: 'center', flexDirection: 'row'}}>
         <NavLink
           exact={false}
@@ -92,7 +93,7 @@ class Home extends Component {
         >
           <FloatingActionButton onClick={() => this.props.addChallenge({
             id: nextChalId++,
-            challenge: this.state.challenge,
+            title: this.state.title,
             difficulty: this.state.difficulty
           })}>
             <ContentAdd />

@@ -27,7 +27,7 @@ class HomeAlt extends Component {
       <div className="container" style={{marginTop: '5em'}}>
         <div style={{display: 'flex', justifyContent: 'center', flexDirection: 'row', marginTop: '2em'}}>
 
-          <p style={{fontSize: 35, textAlign: 'center'}}> {this.props.challenges.slice(-1)[0].challenge} </p>
+          <p style={{fontSize: 35, textAlign: 'center'}}> {this.props.challenges.slice(-1)[0].title} </p>
 
         </div>
         <div style={{display: 'flex', justifyContent: 'center', flexDirection: 'row', marginTop: '1em'}}>
