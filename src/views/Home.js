@@ -13,7 +13,7 @@ import { NavLink } from 'react-router-dom';
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import {addChallenge} from '../actions/index';
-
+import { v4 } from 'uuid';
 
 const items = [
   <MenuItem key={1} value={1} primaryText="Easy" style={{color: 'green'}} />,
@@ -22,7 +22,10 @@ const items = [
   <MenuItem key={4} value={4} primaryText="Very Difficult" style={{color: 'red'}}/>,
 ];
 
-let nextChalId = 0;
+
+const currentDate = new Date();
+const month = currentDate.getMonth() + 1;
+const formattedCurrentDate = currentDate.getDate() + '.' + month + '.' + currentDate.getFullYear();
 
 class Home extends Component {
 
@@ -31,7 +34,8 @@ class Home extends Component {
 
     this.state = {
       difficulty: null,
-      title: ''
+      title: '',
+      date: ''
     }
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -39,13 +43,14 @@ class Home extends Component {
 
 
   handleInputChange(event) {
-    console.log(this.props.challenges)
+
     const target = event.target;
     const value = event.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
-
+    console.log("MAMA" + currentDate);
     this.setState({
-      [name] : value
+      [name] : value,
+      date: formattedCurrentDate
     });
   }
 
@@ -92,9 +97,10 @@ class Home extends Component {
           to={'/home'}
         >
           <FloatingActionButton onClick={() => this.props.addChallenge({
-            id: nextChalId++,
+            id: v4(),
             title: this.state.title,
-            difficulty: this.state.difficulty
+            difficulty: this.state.difficulty,
+            date: this.state.date
           })}>
             <ContentAdd />
           </FloatingActionButton>

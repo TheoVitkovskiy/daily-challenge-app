@@ -7,9 +7,18 @@ import registerServiceWorker from './registerServiceWorker';
 import {Provider} from 'react-redux';
 import {createStore} from 'redux';
 import allReducers from './reducers';
+import { loadState, saveState } from './localStorage';
 
-const store = createStore(allReducers);
+const persistedState = loadState();
+console.log(persistedState);
+const store = createStore(
+  allReducers,
+  persistedState
+);
 
+store.subscribe(() => {
+  saveState(store.getState());
+})
 
 ReactDOM.render(
 

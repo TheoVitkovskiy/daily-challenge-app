@@ -6,7 +6,8 @@ export default function(state=[], action) {
       {
         id: action.payload.id,
         title: action.payload.title,
-        difficulty: action.payload.difficulty
+        difficulty: action.payload.difficulty,
+        date: action.payload.date
       }
 
       ]

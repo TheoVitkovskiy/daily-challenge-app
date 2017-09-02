@@ -18,6 +18,8 @@ class Challenges extends Component {
 
   createCardItems() {
     return this.props.challenges.map((chal) => {
+
+
       return (
 
         <Card key={chal.id} style={{marginBottom: '2em', marginTop: '2em', backgroundColor: this.challengeToColor(chal)}}>
@@ -30,7 +32,8 @@ class Challenges extends Component {
           <CardMedia mediaStyle={{width: 500, height: 400}} expandable={true} style={{display: 'flex', justifyContent: 'center', flexDirection: 'row'}}>
             <img src="https://placeimg.com/750/600/tech" alt="" />
           </CardMedia>
-          <CardText>
+          <CardText style={{fontSize: 15}}>
+            {chal.date}
           </CardText>
         </Card>
       )
