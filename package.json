@@ -40,5 +40,8 @@
     "react-countdown-now": "^1.2.0",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0"
+  },
+  "engines": {
+    "node": "6.9.4"
   }
 }
