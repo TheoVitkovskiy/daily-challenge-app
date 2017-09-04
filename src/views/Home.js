@@ -13,7 +13,6 @@ import { NavLink } from 'react-router-dom';
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import {addChallenge} from '../actions/index';
-import { v4 } from 'uuid';
 
 const items = [
   <MenuItem key={1} value={1} primaryText="Easy" style={{color: 'green'}} />,
@@ -87,7 +86,7 @@ class Home extends Component {
             label="Choose an Image"
             labelStyle={{fontSize: 16}}
           >
-            <input type="file" style={{cursor: 'pointer', position: 'absolute', top: 0, bottom: 0, right: 0, left: 0, width: '100%', opacity: 0}} />
+            <input id='upload' type="file" style={{cursor: 'pointer', position: 'absolute', top: 0, bottom: 0, right: 0, left: 0, width: '100%', opacity: 0}} />
           </RaisedButton>
         </div>
 
@@ -97,7 +96,6 @@ class Home extends Component {
           to={'/home'}
         >
           <FloatingActionButton onClick={() => this.props.addChallenge({
-            id: v4(),
             title: this.state.title,
             difficulty: this.state.difficulty,
             date: this.state.date

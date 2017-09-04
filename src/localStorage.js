@@ -1,4 +1,4 @@
-export const loadState = () => {
+/*export const loadState = () => {
   console.log("LOAD STATE")
   try {
     const serializedState = localStorage.getItem('state');
@@ -20,4 +20,4 @@ export const saveState = (state) => {
   } catch (err) {
     //Ignore write errors
   }
-}
+}*/

@@ -19,7 +19,6 @@ class Challenges extends Component {
   createCardItems() {
     return this.props.challenges.map((chal) => {
 
-
       return (
 
         <Card key={chal.id} style={{marginBottom: '2em', marginTop: '2em', backgroundColor: this.challengeToColor(chal)}}>
