@@ -11,7 +11,7 @@ import allReducers from './reducers';
 /*import { loadState, saveState } from './localStorage';*/
 
 import axios from 'axios';
-import {createLogger} from 'redux-logger';
+const createLogger = require(redux-logger);
 import thunk from 'redux-thunk';
 
 
