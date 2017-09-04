@@ -12,7 +12,7 @@ import allReducers from './reducers';
 
 import thunk from 'redux-thunk';
 import axios from 'axios';
-const createLogger = require('redux-logger');
+
 
 
 
@@ -23,7 +23,7 @@ const store = createStore(
   persistedState
 );
 */
-const middleware = applyMiddleware(thunk, createLogger());
+const middleware = applyMiddleware(thunk);
 const store = createStore(
   allReducers,
   middleware
