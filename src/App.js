@@ -8,16 +8,17 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import fusTheme from './components/fusTheme'
 
-import TopNav from './components/TopNav.js';
+import TopNav from './components/TopNav';
 import AppBar from 'material-ui/AppBar';
-import SideNav from './components/SideNav.js';
+import SideNav from './components/SideNav';
 
 
 /* Import Views */
-import Home from './views/Home.js'
-import Challenges from './views/Challenges.js'
-import Progress from './views/Progress.js'
-import HomeAlt from './views/HomeAlt.js'
+import Home from './views/Home'
+import Challenges from './views/Challenges'
+import Progress from './views/Progress'
+import HomeAlt from './views/HomeAlt'
+import HomeAltDone from './views/HomeAltDone'
 
 import MediaQuery from 'react-responsive'
 
@@ -63,6 +64,7 @@ class App extends Component {
             <Switch>
               <Route exact path='/' component={Home} />
               <Route exact path='/home' component={HomeAlt} />
+              <Route exact path='/homedone' component={HomeAltDone} />
               <Route path='/challenges' component={Challenges} />
               <Route path='/progress' component={Progress} />
             </Switch>

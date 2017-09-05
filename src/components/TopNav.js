@@ -13,6 +13,10 @@ class TopNav extends Component {
               isPrimary={true}
               linkTo={'/'}
               label="Daily"
+              style={{height: '50%'}}
+              labelStyle={{ fontSize: 30, padding: 1, textTransform: 'none', fontWeight: 30, letterSpacing: 1}}
+              buttonStyle={{height: 75, lineHeight: 1.45}}
+              overlayStyle={{height: 75,   display: 'flex', justifyContent: 'center', flexDirection: 'column'}}
             >
             </NavBarItem>
           </div>
@@ -22,6 +26,10 @@ class TopNav extends Component {
               isPrimary={true}
               linkTo={'/challenges'}
               label="Overview"
+              style={{height: '50%'}}
+              labelStyle={{ fontSize: 30, padding: 1, textTransform: 'none', fontWeight: 30, letterSpacing: 1}}
+              buttonStyle={{height: 75, lineHeight: 1.45}}
+              overlayStyle={{height: 75,   display: 'flex', justifyContent: 'center', flexDirection: 'column'}}
             >
             </NavBarItem>
           </div>
@@ -31,6 +39,10 @@ class TopNav extends Component {
               isPrimary={true}
               linkTo={'/progress'}
               label="Progress"
+              style={{height: '50%'}}
+              labelStyle={{ fontSize: 30, padding: 1, textTransform: 'none', fontWeight: 30, letterSpacing: 1}}
+              buttonStyle={{height: 75, lineHeight: 1.45}}
+              overlayStyle={{height: 75,   display: 'flex', justifyContent: 'center', flexDirection: 'column'}}
             >
             </NavBarItem>
           </div>

@@ -7,7 +7,7 @@ import {connect} from 'react-redux'
 
 class Challenges extends Component {
 
-  challengeToColor = (chal) => {
+  difficultyToColor = (chal) => {
     switch(chal.difficulty) {
       case 1: return "green"
       case 2: return "grey"
@@ -22,7 +22,7 @@ class Challenges extends Component {
 
       return (
 
-        <Card key={chal.id} style={{marginBottom: '2em', marginTop: '2em', backgroundColor: this.challengeToColor(chal)}}>
+        <Card key={chal.id} style={{marginBottom: '2em', marginTop: '2em', backgroundColor: this.difficultyToColor(chal)}}>
           <CardTitle
             actAsExpander={true}
             showExpandableButton={true}

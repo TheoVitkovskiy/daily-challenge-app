@@ -33,7 +33,7 @@ router.post('/dailychallengesinsert', (req, res) => {
     console.log(req.body);
 
     mdb.collection('challenges').insertOne(
-      {id: req.body.id, title: req.body.title, difficulty: req.body.difficulty, date: req.body.date}
+      {id: req.body.id, title: req.body.title, difficulty: req.body.difficulty, date: req.body.date, done: req.body.done}
     ).then(response => {
       console.info('One new challenge inserted into the database: ', response.insertedCount);
       res.send({});

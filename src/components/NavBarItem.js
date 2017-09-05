@@ -6,7 +6,7 @@ import Paper from 'material-ui/Paper'
 class NavBarItem extends Component {
   render(){
     return(
-      <Paper zDepth={3}>
+      <Paper zDepth={3} style={{borderRadius: '30px'}}>
         <NavLink
           activeClassItem="active"
           exact={this.props.isExact}
@@ -16,11 +16,12 @@ class NavBarItem extends Component {
             label={this.props.label}
             primary={this.props.isPrimary}
             secondary={this.props.isSecondary}
+            onClick={this.props.onClick}
             fullWidth
-            style={{height: '50%'}}
-            labelStyle={{ fontSize: 30, padding: 1, textTransform: 'none', fontWeight: 30, letterSpacing: 1}}
-            buttonStyle={{height: 75, lineHeight: 1.45}}
-            overlayStyle={{height: 75,   display: 'flex', justifyContent: 'center', flexDirection: 'column' }}
+            style={this.props.style}
+            labelStyle={this.props.labelStyle}
+            buttonStyle={this.props.buttonStyle}
+            overlayStyle={this.props.overlayStyle}
           />
         </NavLink>
       </Paper>

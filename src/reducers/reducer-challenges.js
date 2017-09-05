@@ -4,8 +4,8 @@ import axios from 'axios';
 export default function(state=[], action) {
   switch (action.type) {
     case "FETCH_CHALLENGES_START": {
-      return [...state, {id: 1, title: 'Face your deepest fears!', difficulty: 4, date: "3.9.2017"},
-      {id: 2, title: 'Contribute to an Open Source project!', difficulty: 3, date: "4.9.2017"}]
+      return [...state, {id: 1, title: 'Face your deepest fears!', difficulty: 4, date: "4.9.2017", done: true},
+      {id: 2, title: 'Contribute to an Open Source project!', difficulty: 3, date: "5.9.2017", done: false}]
     }
     case "FETCH_CHALLENGES_ERROR": {
       return [...state]
@@ -18,7 +18,8 @@ export default function(state=[], action) {
         id: action.payload.id,
         title: action.payload.title,
         difficulty: action.payload.difficulty,
-        date: action.payload.date
+        date: action.payload.date,
+        done: action.payload.done
       })
       .then((response) => {
         console.log(response + "YUHUUU!")
@@ -26,7 +27,10 @@ export default function(state=[], action) {
       .catch((err) => {
         console.log(err + "This is an ERROOOOOOOOOOOOOOOOOOR!" + action.payload.title)
       })
-      return [...state, {id: action.payload.id, title: action.payload.title, difficulty: action.payload.difficulty, date: action.payload.date}]
+      return [...state, {id: action.payload.id, title: action.payload.title, difficulty: action.payload.difficulty, date: action.payload.date, done: action.payload.done}]
+    }
+    case "UPDATE_DONE": {
+      return [...state, {id: action.payload.id, title: action.payload.title, difficulty: action.payload.difficulty, date: action.payload.date, done: true}]
     }
   }
   return state;

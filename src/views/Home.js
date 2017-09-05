@@ -36,7 +36,8 @@ class Home extends Component {
     this.state = {
       difficulty: null,
       title: '',
-      date: formattedCurrentDate
+      date: formattedCurrentDate,
+      done: false
     }
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -107,7 +108,8 @@ class Home extends Component {
               id: v4(),
               title: this.state.title,
               difficulty: this.state.difficulty,
-              date: this.state.date
+              date: this.state.date,
+              done: this.state.done
             })}>
               <ContentAdd />
             </FloatingActionButton>

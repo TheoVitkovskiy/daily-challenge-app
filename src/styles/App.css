@@ -1,3 +1,9 @@
+body {
+  -moz-transform: scale(0.75, 0.75); /* Moz-browsers */
+  zoom: 0.75; /* Other non-webkit browsers */
+  zoom: 75%; /* Webkit browsers */
+}
+
 .active div {
   background-color: #eee;
   color: #2E7D32;
