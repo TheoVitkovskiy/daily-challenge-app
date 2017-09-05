@@ -17,10 +17,10 @@ import {bindActionCreators} from 'redux'
 import {addChallenge} from '../actions/index';
 
 const items = [
-  <MenuItem key={1} value={1} primaryText="Easy" style={{color: 'green'}} />,
-  <MenuItem key={2} value={2} primaryText="Normal" style={{color: 'grey'}} />,
-  <MenuItem key={3} value={3} primaryText="Difficult" style={{color: 'orange'}}/>,
-  <MenuItem key={4} value={4} primaryText="Very Difficult" style={{color: 'red'}}/>,
+  <MenuItem key={1} value={1} primaryText="Easy" style={{color: 'rgba(96, 169, 23, 0.9)'}} />,
+  <MenuItem key={2} value={2} primaryText="Normal" style={{color: 'rgba(109, 135, 100, 0.9)'}} />,
+  <MenuItem key={3} value={3} primaryText="Difficult" style={{color: 'rgba(227, 200, 0, 0.9)'}}/>,
+  <MenuItem key={4} value={4} primaryText="Very Difficult" style={{color: 'rgba(229, 20, 0, 0.9)'}}/>,
 ];
 
 
@@ -74,7 +74,7 @@ class Home extends Component {
             value={this.state.title}
             hintText="Enter your challenge for the day!"
             name="title"
-            hintStyle={{fontSize: 24}}
+            hintStyle={{fontSize: 24, color: 'rgb(150, 150, 150)'}}
             inputStyle={{fontSize: 24}}
             fullWidth
           />
@@ -85,7 +85,7 @@ class Home extends Component {
             name="difficulty"
             menuItemStyle={{fontSize: 24}}
             labelStyle={{fontSize: 24}}
-            hintStyle={{fontSize: 24}}
+            hintStyle={{fontSize: 24, color: 'rgb(150, 150, 150)'}}
             fullWidth
           >
             {items}

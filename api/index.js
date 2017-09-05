@@ -40,6 +40,19 @@ router.post('/dailychallengesinsert', (req, res) => {
   });
 })
 
+router.update('/dailychallenges', (req, res) => {
+  console.log(req.body);
+
+  mdb.collection('challenges').updateOne(
+    {"id" : req.body.id},
+    {$set: {"done" : true}}
+  ).then(response => {
+    console.info('The last challenge was updated with the value of done set to true!');
+    res.send({});
+  });
+})
+
+
 
 
 router.get('/dailychallenges/:challengeId', (req, res) => {

@@ -5,9 +5,8 @@ export const addChallenge = (chal) => {
   }
 };
 
-export const updateDone = (chal) => {
+export const updateDone = () => {
   return {
-      type: "UPDATE_DONE",
-      payload: chal
+      type: "UPDATE_DONE"
   }
 };

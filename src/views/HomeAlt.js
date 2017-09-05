@@ -11,18 +11,18 @@ import {updateDone} from '../actions/index';
 import { Redirect } from 'react-router';
 
 const renderer = ({ hours, minutes, seconds }) => {
-  return <span style={{fontSize: '120px', color: 'red'}}>{hours}:{minutes}:{seconds}</span>
+  return <span style={{fontSize: '120px', color: '#c24541'}}>{hours}:{minutes}:{seconds}</span>
 }
 
 
 class HomeAlt extends Component {
 
-  difficultyToColor = (chal) => {
+  difficultyToText = (chal) => {
     switch(chal.difficulty) {
-      case 1: return "green"
-      case 2: return "grey"
-      case 3: return "rgba(255, 255, 0, 0.1)"
-      case 4: return "red"
+      case 1: return "EAAASY!"
+      case 2: return "DID IT!"
+      case 3: return "MADE IT!!!"
+      case 4: return "SUFFERED THROUGH!"
       default: return "white"
     }
   }
@@ -35,8 +35,9 @@ class HomeAlt extends Component {
 
     var month = currentDate.toLocaleString("en-us", { month: "short" })
 
-    let hasCompletedToday = this.props.challenges.slice(-1)[0].done;
     const currentChallenge = this.props.challenges.slice(-1)[0];
+    let hasCompletedToday = currentChallenge.done;
+    console.log(hasCompletedToday);
     if (!hasCompletedToday){
       return (
         <div className="container" style={{marginTop: '3em'}}>
@@ -65,8 +66,8 @@ class HomeAlt extends Component {
               isExact={true}
               isSecondary={true}
               linkTo={'/homedone'}
-              label="Suffered through!"
-              onClick={() => this.props.updateDone(this.props.challenges.slice(-1)[0])}
+              label={this.difficultyToText(currentChallenge)}
+              onClick={() => this.props.updateDone()}
               style={{height: '50%', borderRadius: '25px'}}
               labelStyle={{ fontSize: 40, padding: 1, textTransform: 'none', fontWeight: 30, letterSpacing: 1}}
               buttonStyle={{height: 200, width: 500, lineHeight: 1.45, borderRadius: '30px'}}

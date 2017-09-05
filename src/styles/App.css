@@ -1,4 +1,5 @@
 body {
+  background: linear-gradient(to right, rgba(76,76,76, 0.1), rgba(76,76,76, 0.1)); /*Standard*/
   -moz-transform: scale(0.75, 0.75); /* Moz-browsers */
   zoom: 0.75; /* Other non-webkit browsers */
   zoom: 75%; /* Webkit browsers */
@@ -6,11 +7,11 @@ body {
 
 .active div {
   background-color: #eee;
-  color: #2E7D32;
+  color: rgba(16,137,62 , 0.5);
 }
 
 .active button div {
-  background-color: #2E7D32;
+  background-color: rgba(16,137,62, 0.5);
 }
 
 a {
