@@ -18,7 +18,7 @@ class Challenges extends Component {
   }
 
   createCardItems() {
-    return this.props.challenges.map((chal) => {
+    return this.props.challenges.reverse().map((chal) => {
 
       return (
 
