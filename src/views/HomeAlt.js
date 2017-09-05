@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import RaisedButton from 'material-ui/RaisedButton';
 import NavBarItem from '../components/NavBarItem'
 
 import Countdown from 'react-countdown-now'
@@ -18,7 +17,6 @@ class HomeAlt extends Component {
     var currentDate = new Date();
     currentDate.setDate(currentDate.getDate() + 1);
     var day = currentDate.getDate();
-    var monthNumber = currentDate.getMonth() + 1;
     var year = currentDate.getFullYear();
 
     var month = currentDate.toLocaleString("en-us", { month: "short" })
@@ -38,7 +36,13 @@ class HomeAlt extends Component {
         <div style={{display: 'flex', justifyContent: 'center', flexDirection: 'row', marginTop: '1em'}}>
 
           <Countdown
-            date={ day + ' ' + month + ' ' + year + ' ' + '00:00:00'}
+            date={ day +
+                   ' ' +
+                   month +
+                   ' ' +
+                   year +
+                   ' ' +
+                   '00:00:00'}
             renderer={renderer}
           />
 

@@ -1,7 +1,5 @@
 import 'rc-calendar/assets/index.css'
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom'
-import { List } from 'material-ui/List';
 
 import FullCalendar from 'rc-calendar/lib/FullCalendar'
 

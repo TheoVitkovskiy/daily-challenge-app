@@ -5,15 +5,12 @@ export default function(state=[], action) {
   switch (action.type) {
     case "FETCH_CHALLENGES_START": {
       return [...state]
-      break;
     }
     case "FETCH_CHALLENGES_ERROR": {
       return [...state]
-      break;
     }
     case "RECEIVE_CHALLENGES": {
       return [...state, ...action.payload]
-      break;
     }
     case "ADD_CHALLENGE": {
       axios.post('/api/dailychallengesinsert', {
@@ -29,7 +26,6 @@ export default function(state=[], action) {
         console.log(err + "This is an ERROOOOOOOOOOOOOOOOOOR!" + action.payload.title)
       })
       return [...state, {id: v4(), title: action.payload.title, difficulty: action.payload.difficulty, date: action.payload.date}]
-      break;
     }
   }
   return state;

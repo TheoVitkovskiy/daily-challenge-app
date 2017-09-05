@@ -13,6 +13,7 @@ class Challenges extends Component {
       case 2: return "grey"
       case 3: return "yellow"
       case 4: return "red"
+      default: return "white"
     }
   }
 
