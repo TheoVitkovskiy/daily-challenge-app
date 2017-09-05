@@ -31,7 +31,7 @@ class SideNav extends Component {
           <Drawer
             open={this.props.open}
             docked={false}
-            width={'25%'}
+            width={'30%'}
             onRequestChange={this.props.onRequestChange}
           >
             <List>

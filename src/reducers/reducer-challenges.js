@@ -30,7 +30,7 @@ export default function(state=[], action) {
       return [...state, {id: action.payload.id, title: action.payload.title, difficulty: action.payload.difficulty, date: action.payload.date, done: action.payload.done}]
     }
     case "UPDATE_DONE": {
-      axios.put('/api/dailychallenges', state[state.length])
+      axios.put('/api/dailychallenges', state[state.length-1])
            .then((response) => {
              console.log(response + "THE DATABASE GOT UPDATED")
            })

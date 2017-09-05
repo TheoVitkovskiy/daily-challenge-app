@@ -5,7 +5,7 @@ import config from '../config';
 
 let mdb;
 
-MongoClient.connect('mongodb://localhost:27017/database', (err, db) => {
+MongoClient.connect('mongodb://admin:fedor3520@ds125774.mlab.com:25774/dailychallenges', (err, db) => {
   assert.equal(null, err);
 
   mdb = db;
@@ -40,7 +40,7 @@ router.post('/dailychallengesinsert', (req, res) => {
   });
 })
 
-router.update('/dailychallenges', (req, res) => {
+router.put('/dailychallenges', (req, res) => {
   console.log(req.body);
 
   mdb.collection('challenges').updateOne(
