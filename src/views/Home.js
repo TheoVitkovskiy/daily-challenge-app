@@ -6,8 +6,10 @@ import FloatingActionButton from 'material-ui/FloatingActionButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 
-
 import { NavLink } from 'react-router-dom';
+import { Redirect } from 'react-router';
+
+import { v4 } from 'uuid';
 
 /* Redux */
 import {connect} from 'react-redux'
@@ -34,7 +36,7 @@ class Home extends Component {
     this.state = {
       difficulty: null,
       title: '',
-      date: ''
+      date: formattedCurrentDate
     }
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -46,10 +48,9 @@ class Home extends Component {
     const target = event.target;
     const value = event.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
-    console.log("MAMA" + currentDate);
+
     this.setState({
-      [name] : value,
-      date: formattedCurrentDate
+      [name] : value
     });
   }
 
@@ -58,54 +59,65 @@ class Home extends Component {
 
 
   render(){
-    return(
-      <div className="container" style={{marginTop: '5em'}}>
-        <TextField
-          onChange={this.handleInputChange}
-          value={this.state.title}
-          hintText="Enter your challenge for the day!"
-          name="title"
-          hintStyle={{fontSize: 24}}
-          inputStyle={{fontSize: 24}}
-          fullWidth
-        />
-        <SelectField
-          onChange={this.handleChange}
-          value={this.state.difficulty}
-          hintText="How difficult would you rate this challenge?"
-          name="difficulty"
-          menuItemStyle={{fontSize: 24}}
-          labelStyle={{fontSize: 24}}
-          hintStyle={{fontSize: 24}}
-          fullWidth
-        >
-          {items}
-        </SelectField>
-        <div style={{display: 'flex', justifyContent: 'center', flexDirection: 'row', margin: '2em 0'}}>
-          <RaisedButton
-            label="Choose an Image"
-            labelStyle={{fontSize: 16}}
-          >
-            <input id='upload' type="file" style={{cursor: 'pointer', position: 'absolute', top: 0, bottom: 0, right: 0, left: 0, width: '100%', opacity: 0}} />
-          </RaisedButton>
-        </div>
+    let hasSubmittedToday = (this.props.challenges.slice(-1)[0].date === this.state.date) ? true : false;
+    console.log(hasSubmittedToday);
 
-        <div style={{display: 'flex', justifyContent: 'center', flexDirection: 'row'}}>
-        <NavLink
-          exact={false}
-          to={'/home'}
-        >
-          <FloatingActionButton onClick={() => this.props.addChallenge({
-            title: this.state.title,
-            difficulty: this.state.difficulty,
-            date: this.state.date
-          })}>
-            <ContentAdd />
-          </FloatingActionButton>
-        </NavLink>
+    if (!hasSubmittedToday) {
+      return(
+        <div className="container" style={{marginTop: '5em'}}>
+          <TextField
+            onChange={this.handleInputChange}
+            value={this.state.title}
+            hintText="Enter your challenge for the day!"
+            name="title"
+            hintStyle={{fontSize: 24}}
+            inputStyle={{fontSize: 24}}
+            fullWidth
+          />
+          <SelectField
+            onChange={this.handleChange}
+            value={this.state.difficulty}
+            hintText="How difficult would you rate this challenge?"
+            name="difficulty"
+            menuItemStyle={{fontSize: 24}}
+            labelStyle={{fontSize: 24}}
+            hintStyle={{fontSize: 24}}
+            fullWidth
+          >
+            {items}
+          </SelectField>
+          <div style={{display: 'flex', justifyContent: 'center', flexDirection: 'row', margin: '2em 0'}}>
+            <RaisedButton
+              label="Choose an Image"
+              labelStyle={{fontSize: 16}}
+            >
+              <input id='upload' type="file" style={{cursor: 'pointer', position: 'absolute', top: 0, bottom: 0, right: 0, left: 0, width: '100%', opacity: 0}} />
+            </RaisedButton>
+          </div>
+
+          <div style={{display: 'flex', justifyContent: 'center', flexDirection: 'row'}}>
+          <NavLink
+            exact={false}
+            to={'/home'}
+          >
+            <FloatingActionButton onClick={() => this.props.addChallenge({
+              id: v4(),
+              title: this.state.title,
+              difficulty: this.state.difficulty,
+              date: this.state.date
+            })}>
+              <ContentAdd />
+            </FloatingActionButton>
+          </NavLink>
+          </div>
         </div>
-      </div>
-    )
+      )
+    } else {
+      return (
+        <Redirect to='/home'/>
+      )
+    }
+
   }
 }
 

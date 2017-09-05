@@ -1,10 +1,11 @@
 import axios from 'axios';
-import {v4} from 'uuid';
+
 
 export default function(state=[], action) {
   switch (action.type) {
     case "FETCH_CHALLENGES_START": {
-      return [...state]
+      return [...state, {id: 1, title: 'Face your deepest fears!', difficulty: 4, date: "3.9.2017"},
+      {id: 2, title: 'Contribute to an Open Source project!', difficulty: 3, date: "4.9.2017"}]
     }
     case "FETCH_CHALLENGES_ERROR": {
       return [...state]
@@ -14,7 +15,7 @@ export default function(state=[], action) {
     }
     case "ADD_CHALLENGE": {
       axios.post('/api/dailychallengesinsert', {
-        id: v4(),
+        id: action.payload.id,
         title: action.payload.title,
         difficulty: action.payload.difficulty,
         date: action.payload.date
@@ -25,7 +26,7 @@ export default function(state=[], action) {
       .catch((err) => {
         console.log(err + "This is an ERROOOOOOOOOOOOOOOOOOR!" + action.payload.title)
       })
-      return [...state, {id: v4(), title: action.payload.title, difficulty: action.payload.difficulty, date: action.payload.date}]
+      return [...state, {id: action.payload.id, title: action.payload.title, difficulty: action.payload.difficulty, date: action.payload.date}]
     }
   }
   return state;
