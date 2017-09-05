@@ -11,7 +11,7 @@ class TopNav extends Component {
             <NavBarItem
               isExact={true}
               isPrimary={true}
-              linkTo={'/home'}
+              linkTo={'/'}
               label="Daily"
             >
             </NavBarItem>

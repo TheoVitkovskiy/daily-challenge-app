@@ -59,7 +59,10 @@ class Home extends Component {
 
 
   render(){
+
     let hasSubmittedToday = (this.props.challenges.slice(-1)[0].date === this.state.date) ? true : false;
+    console.log(this.props.challenges.slice(-1)[0].date);
+    console.log(this.state.date);
     console.log(hasSubmittedToday);
 
     if (!hasSubmittedToday) {
