@@ -27,12 +27,12 @@
     "redux-thunk": "^2.2.0"
   },
   "scripts": {
-    "start": "./node_modules/.bin/babel-node server.js",
+    "start": "react-scripts run",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "dev": "webpack -wd",
-    "postinstall": "react-scripts start"
+    "postinstall": "npm run build"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
