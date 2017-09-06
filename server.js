@@ -1,4 +1,3 @@
-import config from './config';
 import apiRouter from './api';
 import path from 'path';
 import bodyParser from 'body-parser';
@@ -14,6 +13,6 @@ server.get('/*', function (req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'))
 })
 
-server.listen(config.port, () => {
+server.listen(process.env.PORT || 8080, () => {
   console.info('Express listening on port ', config.port);
 });
