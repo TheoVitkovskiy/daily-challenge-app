@@ -19,7 +19,7 @@ module.exports = {
       new webpack.DefinePlugin({
         'process.env': {
           'NODE_ENV': JSON.stringify('production'),
-          'API_HOST': 'https://daily-challenge.herukoapp.com'
+          'API_HOST': JSON.stringify('https://daily-challenge.herukoapp.com')
         }
       })
     ],
