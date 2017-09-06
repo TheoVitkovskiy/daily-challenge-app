@@ -1,6 +1,6 @@
 import express from 'express';
 import path from 'path';
-import apiRouter from './api';
+import apiRouter from '../api';
 import bodyParser from 'body-parser';
 import open from 'open';
 
