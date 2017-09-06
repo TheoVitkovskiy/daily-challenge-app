@@ -1,0 +1,34 @@
+body {
+  background: linear-gradient(to right, rgba(76,76,76, 0.1), rgba(76,76,76, 0.1)); /*Standard*/
+  -moz-transform: scale(0.75, 0.75); /* Moz-browsers */
+  zoom: 0.75; /* Other non-webkit browsers */
+  zoom: 75%; /* Webkit browsers */
+}
+
+.active div {
+  background-color: #eee;
+  color: rgba(16,137,62 , 0.5);
+}
+
+.active button div {
+  background-color: rgba(16,137,62, 0.5);
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.box {
+  position: relative;
+  width: 15px;
+  height: 15px;
+  display: block;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-right: 0px;
+  border-left: 0px;
+}
+
+.rc-calendar-cell {
+  height: 50px
+}
