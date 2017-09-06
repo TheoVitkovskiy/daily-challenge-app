@@ -29,7 +29,7 @@ router.get('/dailychallenges', (req, res) => {
     });
 });
 
-router.post('/dailychallengesinsert', (req, res) => {
+router.post('/dailychallenges', (req, res) => {
     console.log(req.body);
 
     mdb.collection('challenges').insertOne(

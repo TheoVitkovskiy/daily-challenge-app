@@ -14,7 +14,7 @@ export default function(state=[], action) {
       return [...state, ...action.payload]
     }
     case "ADD_CHALLENGE": {
-      axios.post('/api/dailychallengesinsert', {
+      axios.post('/api/dailychallenges', {
         id: action.payload.id,
         title: action.payload.title,
         difficulty: action.payload.difficulty,
