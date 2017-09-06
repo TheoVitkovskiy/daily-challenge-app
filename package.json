@@ -27,13 +27,13 @@
     "redux-thunk": "^2.2.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "./node_modules/babel/bin/babel-node.js tools/publicServer.js",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "dev": "webpack -wd",
     "postinstall": "npm run build",
-    "postbuild" : "babel-node tools/publicServer.js",
+    "postbuild" : "./node_modules/babel/bin/babel-node.js tools/publicServer.js",
     "babel-cli": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-es2015": "^6.24.1",
