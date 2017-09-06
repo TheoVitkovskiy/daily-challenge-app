@@ -33,15 +33,15 @@
     "eject": "react-scripts eject",
     "dev": "webpack -wd",
     "postinstall": "npm run build",
-    "postbuild" : "babel-node tools/publicServer.js"
-  },
-  "devDependencies": {
+    "postbuild" : "babel-node tools/publicServer.js",
     "babel-cli": "^6.26.0",
-    "babel-eslint": "^7.2.3",
     "babel-loader": "^7.1.2",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.3"
   },
   "engines": {
     "node": "6.9.4"
