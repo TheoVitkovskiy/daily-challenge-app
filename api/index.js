@@ -1,17 +1,21 @@
-import express from 'express';
-import { MongoClient } from 'mongodb';
-import assert from 'assert';
-import config from '../config';
+require('import-export');
+require('babel-core/register')({presets: ['es2015', 'react']});
+
+const express = require('express');
+const mongo = require ('mongodb');
+const mongoClient = mongo.MongoClient;
+const assert = require('assert');
+const config = require('../config');
 
 let mdb;
 
-MongoClient.connect('mongodb://admin:fedor3520@ds125774.mlab.com:25774/dailychallenges', (err, db) => {
+mongoClient.connect('mongodb://admin:fedor3520@ds125774.mlab.com:25774/dailychallenges', (err, db) => {
   assert.equal(null, err);
 
   mdb = db;
 });
 
-const router = express.Router();
+let router = express.Router();
 
 router.get('/dailychallenges', (req, res) => {
   let challenges = {};
@@ -59,4 +63,4 @@ router.get('/dailychallenges/:challengeId', (req, res) => {
 
 });
 
-export default router;
+module.exports = router;
