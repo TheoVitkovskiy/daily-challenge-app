@@ -19,7 +19,9 @@
     "babel-preset-stage-2": "^6.24.1",
     "body-parser": "^1.17.2",
     "compression": "^1.7.0",
+    "express": "4.14.1",
     "formidable": "^1.1.1",
+    "import-export": "^1.0.1",
     "json-loader": "^0.5.7",
     "material-ui": "^0.19.0",
     "mongodb": "^2.2.31",
@@ -38,8 +40,7 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
     "serve-favicon": "^2.4.3",
-    "uuid": "^3.1.0",
-    "express": "4.14.1"
+    "uuid": "^3.1.0"
   },
   "scripts": {
     "dev": "react-scripts start",
